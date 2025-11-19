@@ -1,0 +1,19 @@
+kind: AdaptiveDialog
+beginDialog:
+  kind: OnGeneratedResponse
+  id: main
+  actions:
+    - kind: SendActivity
+      id: sendActivity_ZPYR9a
+      activity: "{System.Response.FormattedText}"
+
+    - kind: SetVariable
+      id: setVariable_ej3Cqo
+      variable: System.ContinueResponse
+      value: false
+
+    - kind: EndDialog
+      id: oFrBDK
+
+inputType: {}
+outputType: {}

@@ -1,0 +1,74 @@
+kind: AdaptiveDialog
+inputs:
+  - kind: AutomaticTaskInput
+    propertyName: Thinkingtext
+    name: Thinking steps
+    description: Identify all the thinking steps exposed, before the model actually responds to the user request.
+    shouldPromptUser: true
+
+modelDescription: When model is thinking, invoke this topic
+beginDialog:
+  kind: OnRecognizedIntent
+  id: main
+  intent: {}
+  actions:
+    - kind: SetVariable
+      id: setVariable_U7zaU1
+      variable: Global.ThinkingSteps
+      value: =Concatenate(Global.ThinkingSteps, Char(10), Topic.Thinkingtext)
+
+    - kind: SendActivity
+      id: sendActivity_WWD3gc
+      activity:
+        attachments:
+          - kind: AdaptiveCardTemplate
+            cardContent: |-
+              ={
+                type: "AdaptiveCard",
+                version: "1.5",
+                body: [
+                  {
+                    type: "TextBlock",
+                    text: "Stocks Agent - Thinking...",
+                    wrap: true,
+                    size: "Small",
+                    weight: "Bolder",
+                    isSubtle: true
+                  },
+                  {
+                    type: "ActionSet",
+                    actions: [
+                      {
+                        type: "Action.ShowCard",
+                        card: {
+                          type: "AdaptiveCard",
+                          body: [
+                            {
+                              type: "TextBlock",
+                              text: Global.ThinkingSteps,
+                              wrap: true,
+                              size: "Small",
+                              weight: "Bolder",
+                              isSubtle: true
+                            }
+                          ],
+                          '$schema': "https://adaptivecards.io/schemas/adaptive-card.json",
+                          version: "1.5"
+                        },
+                        title: "Show reasoning steps",
+                        style: "positive"
+                      }
+                    ]
+                  }
+                ],
+                '$schema': "https://adaptivecards.io/schemas/adaptive-card.json"
+              }
+
+inputType:
+  properties:
+    Thinkingtext:
+      displayName: Thinking steps
+      description: Identify all the thinking steps exposed, before the model actually responds to the user request.
+      type: String
+
+outputType: {}
