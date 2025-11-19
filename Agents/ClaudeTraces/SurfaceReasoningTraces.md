@@ -25,7 +25,7 @@ This makes Claude models especially valuable for debugging, transparency, auditi
 ## Fastest Way to Try It
 To explore this capability immediately:
 
-1. Download the **unmanaged solution** containing the demo agent.  
+1. Download the [**unmanaged solution**](https://github.com/hisandeepangara/CopilotStudioSnippets/blob/main/Agents/ClaudeTraces/ClaudeTraces_1_0_0_1.zip) containing the demo agent.  
 2. Import it into your environment.  
 3. Go to **Solutions → Agents → Stocks Agent**.
 
@@ -34,4 +34,4 @@ Inside the agent, you’ll find all custom topics and instructions showing how r
 ---
 
 ## Copy Snippets into Your Own Agents
-You can also choose to directly copy the **YAML snippets** (topics) and instructions into your own agents to replicate the functionality without importing the entire solution.
+You can also choose to directly copy the **YAML snippets** ([Model Thinking.yaml](https://github.com/hisandeepangara/CopilotStudioSnippets/blob/main/Agents/ClaudeTraces/Model%20Thinking.yaml) and [AI response generated.yaml](https://github.com/hisandeepangara/CopilotStudioSnippets/blob/main/Agents/ClaudeTraces/AI%20response%20generated.yaml)) and [instructions](https://github.com/hisandeepangara/CopilotStudioSnippets/blob/main/Agents/ClaudeTraces/Instructions.md) into your own agents to replicate the functionality without importing the entire solution.
