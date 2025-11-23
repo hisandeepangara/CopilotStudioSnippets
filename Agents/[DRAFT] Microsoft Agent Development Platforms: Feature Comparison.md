@@ -1,4 +1,4 @@
-# MICROSOFT AGENTS ECOSYSTEM
+# Microsoft Agent Development Platforms: Feature Comparison
 
 | Category | Copilot Studio Lite | Copilot Studio Full | Microsoft 365 Agents Toolkit | Microsoft Agent Framework |
 |----------|---------------------|---------------------|------------------------------|---------------------------|
