@@ -1,0 +1,76 @@
+kind: AdaptiveDialog
+beginDialog:
+  kind: OnGeneratedResponse
+  id: main
+  actions:
+    - kind: SendActivity
+      id: sendActivity_SCLl0z
+      activity:
+        attachments:
+          - kind: AdaptiveCardTemplate
+            cardContent: |-
+              ={
+                type: "AdaptiveCard",
+                '$schema': "https://adaptivecards.io/schemas/adaptive-card.json",
+                version: "1.5",
+                body: [
+                  {
+                    type: "Container",
+                    style: "emphasis",
+                    showBorder: true,
+                    roundedCorners: true,
+                    items: [
+                      {
+                        type: "TextBlock",
+                        text: System.Response.FormattedText,
+                        wrap: true
+                      }
+                    ]
+                  },
+                  {
+                    type: "ColumnSet",
+                    columns: [
+                      {
+                        type: "Column",
+                        width: "stretch"
+                      },
+                      {
+                        type: "Column",
+                        width: "auto",
+                        items: [
+                          {
+                            type: "Image",
+                            url: "https://icons.veryicon.com/png/o/file-type/file-type-icon-library/retry-1.png",
+                            size: "Small",
+                            width: "30px",
+                            height: "30px",
+                            horizontalAlignment: "Center",
+                            selectAction: {
+                              type: "Action.Submit",
+                              data: {
+                                event: "retry",
+                                prompt: System.Activity.Text,
+                                response: System.Response.FormattedText
+                              }
+                            }
+                          }
+                        ],
+                        backgroundImage: {
+                          verticalAlignment: "Center",
+                          horizontalAlignment: "Center"
+                        },
+                        verticalContentAlignment: "Center",
+                        horizontalAlignment: "Left"
+                      }
+                    ]
+                  }
+                ]
+              }
+
+    - kind: SetVariable
+      id: setVariable_CaGogV
+      variable: System.ContinueResponse
+      value: =false
+
+inputType: {}
+outputType: {}
