@@ -1,0 +1,58 @@
+{
+    "type": "AdaptiveCard",
+    "$schema": "https://adaptivecards.io/schemas/adaptive-card.json",
+    "version": "1.5",
+    "body": [
+        {
+            "type": "Container",
+            "style": "emphasis",
+            "showBorder": true,
+            "roundedCorners": true,
+            "items": [
+                {
+                    "type": "TextBlock",
+                    "text": "New TextBlock",
+                    "wrap": true
+                }
+            ]
+        },
+        {
+            "type": "ColumnSet",
+            "columns": [
+                {
+                    "type": "Column",
+                    "width": "stretch"
+                },
+                {
+                    "type": "Column",
+                    "width": "auto",
+                    "items": [
+                        {
+                            "type": "Image",
+                            "url": "https://icons.veryicon.com/png/o/file-type/file-type-icon-library/retry-1.png",
+                            "size": "Small",
+                            "width": "20px",
+                            "height": "20px",
+                            "horizontalAlignment": "Center",
+                            "selectAction": {
+                                "type": "Action.Submit",
+                                "data": {
+                                    "event": "retry",
+                                    "prompt": "",
+                                    "response": ""
+                                }
+                            }
+                            
+                        }
+                    ],
+                    "backgroundImage": {
+                        "verticalAlignment": "Center",
+                        "horizontalAlignment": "Center"
+                    },
+                    "verticalContentAlignment": "Center",
+                    "horizontalAlignment": "Left"
+                }
+            ]
+        }
+    ]
+}
