@@ -1,0 +1,32 @@
+kind: AdaptiveDialog
+beginDialog:
+  kind: OnActivity
+  id: main
+  condition: =!IsBlank(System.Activity.Value.event) && Text(System.Activity.Value.event) = "retry"
+  type: Message
+  actions:
+    - kind: SendActivity
+      id: sendActivity_CXxQYL
+      activity: Hang tight, we’re giving this another shot!
+
+    - kind: ParseValue
+      id: Z8cpxu
+      variable: Topic.retryEvent
+      valueType:
+        kind: Record
+        properties:
+          event: String
+          prompt: String
+          response: String
+
+      value: =System.Activity.Value.event
+
+    - kind: RecognizeIntent
+      id: 8bX2s9
+      userInput: "=\"User is not satisfied with the previous response: \"& Topic.retryEvent.response &\"for the user prompt: \" & Topic.retryEvent.prompt & \"Please retry\""
+
+    - kind: EndDialog
+      id: qOos7k
+
+inputType: {}
+outputType: {}
